@@ -20,7 +20,7 @@ module.exports = {
     devtool,
     optimization: optimization(),
     devServer: {port: 3000, hot: true},
-    resolve: { extensions: ['.tsx', '.ts', '.js'] },
+    resolve: { extensions: ['.tsx', '.jsx', '.ts', '.js'] },
 
     plugins: [
         new CleanWebpackPlugin(),
@@ -41,7 +41,12 @@ module.exports = {
             {
                 test: /\.[jt]sx?$/, 
                 loader: 'babel-loader', 
-                exclude: /node_modules/, 
+                exclude: /node_modules/,
+                options: {
+                    plugins: [
+                        'react-require'  
+                    ]
+                }
             }, 
             {
                 test: /\.(png|svg|jpg|gif|jpeg)$/,
