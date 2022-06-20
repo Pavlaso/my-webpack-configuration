@@ -1,1 +1,1 @@
-# my-webpack-configuration
+# my-webpack-configuration смотреть в ветке master
